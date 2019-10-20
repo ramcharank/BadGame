@@ -1,3 +1,31 @@
-<p>
-  people works!
-</p>
+<!-- <div *ngFor="let user of people">
+  <li>{{ user.Name }} -- {{ user.Due }}</li>
+</div> -->
+
+<div class="panel-footer">
+  <a class="btn btn-default" (click)="addPerson()" style="width:120px">
+    <i class="glyphicon glyphicon-user"></i> &nbsp; Add Person
+  </a>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ pageTitle }}
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Total Due</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of people">
+          <td>{{ user.Name }}</td>
+          <td>{{ user.Due }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
