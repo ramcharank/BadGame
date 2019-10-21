@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { PeopleService } from "../shared/people.service";
-import { IPeople } from "../shared/people";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+import { PeopleService } from "../../services/people.service";
+import { IPeople } from "../../models/people";
 import { Router } from "@angular/router";
 
 @Component({

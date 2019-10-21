@@ -1,13 +1,9 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-import { IPeople } from "./people";
+import { IPeople } from "../models/people";
 
 @Injectable()
 export class PeopleService {
-  private peopleUrl = "./app/data.json";
   peoples: IPeople[];
-  private url: string = "./test.json";
   myName: string;
 
   constructor() {}
