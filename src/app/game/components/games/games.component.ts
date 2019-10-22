@@ -1,15 +1,28 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { GameService } from '../../services/game.service';
+import { IGame } from '../../models/game';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-games",
-  templateUrl: "./games.component.html",
-  styleUrls: ["./games.component.css"]
+  selector: 'app-games',
+  templateUrl: './games.component.html',
+  styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  button1: string;
-  button2: string;
-  myvar: any;
-  constructor() {}
+  pageTitle = "Games";
+  games: IGame[];
+  constructor(private gameService: GameService,
+    private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+      this.setGames();
+   }
+
+  setGames() {
+    this.games = this.gameService.getGames();
+  }
+
+  gameCard() {
+    this.router.navigate(['/gamecard']);
+  }
 }
