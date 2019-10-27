@@ -1,5 +1,5 @@
 <div class="panel-footer">
-  <a class="btn btn-default" (click) = "gameCard()" style="width:120px">
+  <a class="btn btn-default" (click)="addGame()" style="width:120px">
     <i class="glyphicon glyphicon-user"></i> &nbsp; Add Game
   </a>
 </div>
@@ -19,7 +19,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let game of games">
-          <td>{{ game.Date }}</td>
+          <td>
+            <a (click)="gameCard(game.GameId)">{{ game.Date }}</a>
+          </td>
           <td>{{ game.Cost }}</td>
           <td>{{ game.Players.length }}</td>
         </tr>
@@ -27,9 +29,3 @@
     </table>
   </div>
 </div>
-
-<!-- 
-<div *ngFor="let game of games">
-  <li>{{ game.Date }} -- {{ game.Cost }}</li>
-</div> -->
-

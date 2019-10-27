@@ -12,6 +12,7 @@ export class GameService implements OnInit {
     getGames() {
         return [
             {
+                "GameId": "20191010070000",
                 "Date": "10-Oct-2019",
                 "Time": 6,
                 "DurationInMin": 60,
@@ -21,6 +22,7 @@ export class GameService implements OnInit {
                 "Players": ["Ram", "Aj", "Hartej"]
             },
             {
+                "GameId": "20191010080000",
                 "Date": "10-Oct-2019",
                 "Time": 6,
                 "DurationInMin": 60,

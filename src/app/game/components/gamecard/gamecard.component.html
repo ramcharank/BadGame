@@ -1,4 +1,40 @@
-<p>
-    Gamecard works
-    </p>
-    
+<div class="panel panel-primary" *ngIf="selectedGame">
+  <div class="panel-heading">
+    {{ pageTitle + ": " + selectedGame.Date }}
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-3">Name:</div>
+          <div class="col-md-6">{{ selectedGame.Date }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Code:</div>
+          <div class="col-md-6">{{ selectedGame.Id }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Players:</div>
+          <div class="col-md-6">{{ selectedGame.Players }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Time:</div>
+          <div class="col-md-6">{{ selectedGame.Time }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Cost:</div>
+          <div class="col-md-6">
+            {{ selectedGame.Cost | currency: "USD":true }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    <a class="btn btn-default" (click)="onBack()" style="width:80px">
+      <i class="glyphicon glyphicon-chevron-left"></i> Back
+    </a>
+  </div>
+</div>

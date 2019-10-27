@@ -1,4 +1,5 @@
 export interface IGame {
+  GameId: string;
   Date: string;
   Time: Number;
   DurationInMin: Number;
