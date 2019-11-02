@@ -1,11 +1,17 @@
+<!-- 
 <label>
-  Date:
-  <input [matDatepicker]="myDatepicker" />
-  <mat-datepicker #myDatepicker></mat-datepicker>
-
-  Players:
-  <input type="text" [formControl]="players" />
-
-  Cost:
-  <input type="text" [formControl]="cost" />
-</label>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" />
+  <mat-datepicker-toggle
+    class="mat-datepicker"
+    matSuffix
+    [for]="picker"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <br />
+  <mat-label>Players</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let player of players" [value]="player.Due">
+      {{ player.Name }}
+    </mat-option>
+  </mat-select>
+</label> -->
