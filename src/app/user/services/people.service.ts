@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { IPeople } from '../models/people';
+import { Injectable } from "@angular/core";
+import { IPeople } from "../models/people";
 
 @Injectable()
 export class PeopleService {
@@ -14,11 +14,11 @@ export class PeopleService {
   getPeople() {
     return [
       {
-        Name: 'Ram',
+        Name: "Ram",
         Due: 10
       },
       {
-        Name: 'Hartej',
+        Name: "Hartej",
         Due: 200
       }
     ];

@@ -1,17 +1,40 @@
-<!-- 
-<label>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date" />
-  <mat-datepicker-toggle
-    class="mat-datepicker"
-    matSuffix
-    [for]="picker"
-  ></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-  <br />
-  <mat-label>Players</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let player of players" [value]="player.Due">
-      {{ player.Name }}
-    </mat-option>
-  </mat-select>
-</label> -->
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+        [(ngModel)]="model"
+        ngbDatepicker
+        #d="ngbDatepicker"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary calendar"
+          (click)="d.toggle()"
+          type="button"
+        ></button>
+      </div>
+    </div>
+    <ul class="heroes">
+      <li
+        *ngFor="let hero of players"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)"
+      >
+        <span class="badge">{{ hero.Due }}</span> {{ hero.name }}
+      </li>
+    </ul>
+    <div *ngIf="selectedHero">
+      <h2>{{ selectedHero.Name | uppercase }} Details</h2>
+      <div><span>Due: </span>{{ selectedHero.Due }}</div>
+      <div>
+        <label
+          >name:
+          <input [(ngModel)]="selectedHero.Name" placeholder="name" />
+        </label>
+      </div>
+    </div>
+  </div>
+</form>

@@ -5,6 +5,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { GameService } from "./services/game.service";
 import { GameCardComponent } from "./components/gamecard/gamecard.component";
 import { AddgameComponent } from "./components/addgame/addgame.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FormsModule } from "@angular/forms";
+import { PeopleService } from "../user/services/people.service";
 
 @NgModule({
   declarations: [GamesComponent, GameCardComponent, AddgameComponent],
@@ -14,8 +17,10 @@ import { AddgameComponent } from "./components/addgame/addgame.component";
       { path: "games/:id", component: GameCardComponent },
       { path: "addgame", component: AddgameComponent }
     ]),
-    BrowserModule
+    BrowserModule,
+    NgbModule,
+    FormsModule
   ],
-  providers: [GameService]
+  providers: [GameService, PeopleService]
 })
 export class GameModule {}
