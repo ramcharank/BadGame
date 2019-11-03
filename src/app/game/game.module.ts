@@ -21,6 +21,6 @@ import { PeopleService } from "../user/services/people.service";
     NgbModule,
     FormsModule
   ],
-  providers: [GameService, PeopleService]
+  providers: [GameService]
 })
 export class GameModule {}

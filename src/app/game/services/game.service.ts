@@ -1,14 +1,14 @@
 import { Injectable, OnInit } from "@angular/core";
-import { PeopleService } from "src/app/user/services/people.service";
+import { CommonService } from "../../shared/common.service";
 
 @Injectable()
 export class GameService implements OnInit {
-  constructor(private poepleService: PeopleService) {}
+  constructor(private commonService: CommonService) {}
 
   ngOnInit() {}
 
   getPlayers() {
-    return this.poepleService.getPeople();
+    return this.commonService.getPlayers();
   }
 
   getGames() {

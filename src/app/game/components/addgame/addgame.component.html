@@ -21,19 +21,26 @@
       <li
         *ngFor="let hero of players"
         [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)"
+        (click)="selectPlayer(hero)"
       >
-        <span class="badge">{{ hero.Due }}</span> {{ hero.name }}
+        <span class="badge">{{ hero.Due }}</span> {{ hero.Name }}
       </li>
     </ul>
-    <div *ngIf="selectedHero">
-      <h2>{{ selectedHero.Name | uppercase }} Details</h2>
-      <div><span>Due: </span>{{ selectedHero.Due }}</div>
+
+    <div *ngFor="let player of playingTeam">
+      <h2>{{ player.Name | uppercase }}</h2>
+      <a
+        class="btn btn-default"
+        (click)="removePlayer(player)"
+        style="width:120px"
+      >
+        <i class="glyphicon glyphicon-user"></i>
+      </a>
       <div>
-        <label
+        <!-- <label
           >name:
           <input [(ngModel)]="selectedHero.Name" placeholder="name" />
-        </label>
+        </label> -->
       </div>
     </div>
   </div>

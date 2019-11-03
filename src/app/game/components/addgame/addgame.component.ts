@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { IPeople } from "src/app/user/models/people";
 import { GameService } from "../../services/game.service";
+import { IPeople } from "../../../user/models/people";
 
 @Component({
   selector: "app-addgame",
@@ -10,6 +10,7 @@ import { GameService } from "../../services/game.service";
 export class AddgameComponent implements OnInit {
   model: any;
   players: IPeople[];
+  playingTeam: IPeople[];
   constructor(private gameService: GameService) {}
 
   ngOnInit() {
@@ -18,5 +19,22 @@ export class AddgameComponent implements OnInit {
 
   getPlayers() {
     this.players = this.gameService.getPlayers();
+  }
+
+  selectPlayer(player: any) {
+    if (!this.playingTeam) {
+      this.playingTeam = [];
+    } else if (this.playingTeam.indexOf(player) !== -1) {
+      return;
+    }
+    this.playingTeam.push(player);
+  }
+
+  removePlayer(player: any) {
+    if (!this.playingTeam) {
+      return;
+    } else if (this.playingTeam.indexOf(player) !== -1) {
+      this.playingTeam.splice(this.playingTeam.indexOf(player), 1);
+    }
   }
 }
