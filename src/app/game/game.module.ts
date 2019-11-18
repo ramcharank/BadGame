@@ -5,12 +5,13 @@ import { BrowserModule } from "@angular/platform-browser";
 import { GameService } from "./services/game.service";
 import { GameCardComponent } from "./components/gamecard/gamecard.component";
 import { AddgameComponent } from "./components/addgame/addgame.component";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { FormsModule } from "@angular/forms";
 import { PeopleService } from "../user/services/people.service";
+import { DatePickerComponent } from './components/datepicker/datepicker.componen';
 
 @NgModule({
-  declarations: [GamesComponent, GameCardComponent, AddgameComponent],
+  declarations: [GamesComponent, GameCardComponent, AddgameComponent, DatePickerComponent],
   imports: [
     RouterModule.forRoot([
       { path: "games", component: GamesComponent },
